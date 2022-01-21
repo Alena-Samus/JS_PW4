@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример работы с пользователем</title>
+</head>
+<body>
+  Введите слово.<br>
+  <script>
+    let where = window.prompt('Куда заглянем сегодня?\nНазвание вводите кириллицей')
+    //Убираем пробелы в начале и конце строки и между словами, если они есть
+    switch (where.trim().replace(/\s+/g, '').toLowerCase()) {
+      case 'вконтакте': case 'vk': case 'вк':
+        window.location = 'http://vk.com';
+        break;
+
+      case 'тикток': case 'tiktok':
+        window.location = 'https://tiktok.com';
+        break;  
+
+      case 'фейсбук': case 'facebook':
+        window.location = 'https://facebook.com';
+        break;
+
+      case 'инстаграм': case 'instagram':
+        window.location = 'https://instagram.com';
+        break;
+
+      case 'твиттер': case 'twitter':
+        window.location = 'https://twitter.com';
+        break;
+
+      default:
+        window.location = 'https://itiu.bsu.by/';
+        break;
+    }
+  </script>
+  
+</body>
+</html>

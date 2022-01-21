@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Определить гриб</title>
+</head>
+<body>
+  <script>
+    //Определяем цвет гриба и проверяем корректность введенных данных
+    let mushColor = prompt('Какой цвет гриба: белый, желтый, красный или коричневый ?').trim().replace(/\s+/g, '').toLowerCase();
+    while (mushColor != 'белый' && mushColor != 'желтый' && mushColor != 'красный' && mushColor != 'коричневый' && mushColor != 'жёлтый') {
+      alert ('Вы ввели неправильный цвет!\nПопробуйте еще раз');
+      mushColor = prompt('Какой цвет гриба: белый, желтый, красный или коричневый?)').trim().replace(/\s+/g, '').toLowerCase();
+    }
+    
+    //Определяем наличие юбки
+    let mushSkirt = confirm('У гриба есть юбка?\nДа - ОК, Нет - Отмена');
+    
+    //Выбираем гриб в зависимости от введенных характеристик
+    switch (mushColor) {
+      case 'белый':
+        if (mushSkirt == false)
+          alert ('Вы нашли белый гриб');
+        else
+          alert('С грибами надо быть внимательными!')       
+        break;
+
+      case 'красный':
+        if (mushSkirt == true)
+         alert('А не мухомор ли это?');
+        else
+         alert('Может это подосиновик?');
+        break;
+    
+      default:
+        alert ('С грибами надо быть внимательными!');
+        break;
+    }
+  </script>
+</body>
+</html>

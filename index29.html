@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Индивидуальное задание №1</title>
+</head>
+
+<body>
+ 
+  <script>
+    //Ввод данных и проверка их корректности
+    let numberMonth = window.prompt('Введите номер месяца:\nВводить числа от 1 до 12')
+    let mon = +numberMonth.trim().replace(/\s+/g, '')
+    console.log(mon);
+
+    while (Number.isInteger(mon) == false || mon > 12) {
+      alert('Номер месяца введен неверно!\nПопробуйте еще раз')
+      numberMonth = window.prompt('Введите номер месяца:\nВводить числа от 1 до 12')
+      mon = +numberMonth.trim().replace(/\s+/g, '')  
+      console.log(mon);
+    }
+ 
+    //Вывод сезона на экран в зависимости от номера введенного месяца
+    let season = '';  
+    
+    switch (String(mon)) {//Преобразование переменной mon к типу данных String
+      case '12': 
+      case '1': 
+      case '2':
+        season = 'зима';
+        break;
+
+      case '3': 
+      case '4': 
+      case '5':
+        season = 'весна';
+        break;
+
+      case '6': 
+      case '7': 
+      case '8':
+        season = 'лето';
+        break;
+
+      case '9': 
+      case '10': 
+      case '11':
+        season = 'осень';
+        break;
+
+      default:
+       season = 'такого месяца нет';
+        break;
+    }
+  alert(season);
+  </script>
+
+</body>
+
+</html>
